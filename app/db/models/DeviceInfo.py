@@ -12,4 +12,4 @@ class DeviceInfo(Base):
     device_id = Column(String, nullable=False)
     person_id = Column(Integer, ForeignKey("person_message.id"))
 
-    person = relationship("PersonMessage", back_populates="device_info")
+    person_message = relationship("PersonMessage", back_populates="device_info")

@@ -10,4 +10,4 @@ class SuspiciousHostageContent(Base):
     sentence = Column(String, nullable=False)
     person_id = Column(Integer, ForeignKey("person_message.id"))
 
-    person = relationship("PersonMessage", back_populates="hostage_contents")
+    person_message = relationship("PersonMessage", back_populates="hostage_contents")

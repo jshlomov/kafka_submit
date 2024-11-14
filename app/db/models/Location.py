@@ -13,4 +13,4 @@ class Location(Base):
     country = Column(String, nullable=False)
     person_id = Column(Integer, ForeignKey("person_message.id"))
 
-    person = relationship("PersonMessage", back_populates="location")
+    person_message = relationship("PersonMessage", back_populates="location")
