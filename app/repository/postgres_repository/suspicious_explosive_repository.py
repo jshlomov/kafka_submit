@@ -1,6 +1,6 @@
 from sqlalchemy.exc import SQLAlchemyError
 
-from app.db.models import SuspiciousExplosiveContent
+from app.db.models import SuspiciousExplosiveContent, SuspiciousHostageContent, PersonMessage
 from app.db.postgres_db import session_maker
 from returns.result import Result, Failure, Success
 
