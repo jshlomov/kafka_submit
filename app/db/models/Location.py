@@ -13,4 +13,4 @@ class Location(Base):
     country = Column(String, nullable=False)
     person_id = Column(Integer, ForeignKey("person.id"))
 
-    persons = relationship("Person", back_populates="location")
+    person = relationship("Person", back_populates="location")

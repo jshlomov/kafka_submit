@@ -6,7 +6,7 @@ from kafka import KafkaConsumer
 
 load_dotenv(verbose=True)
 
-def consume_message(topic_name:str, func = lambda x: x, mode ='latest'):
+def consume(topic_name:str, func = lambda x: x, mode ='latest'):
     consumer = KafkaConsumer(
         topic_name,
         bootstrap_servers=os.environ['BOOTSTRAP_SERVERS'],
