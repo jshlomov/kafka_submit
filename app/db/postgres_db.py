@@ -2,7 +2,7 @@ import os
 from dotenv import load_dotenv
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from app.db.models import Base, DeviceInfo, Person, Location, SuspiciousHostageContent, SuspiciousExplosiveContent
+from app.db.models import Base, DeviceInfo, DeviceInfo, Location, SuspiciousHostageContent, SuspiciousExplosiveContent
 
 load_dotenv(verbose=True)
 

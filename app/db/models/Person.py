@@ -4,7 +4,7 @@ from sqlalchemy.orm import relationship
 from app.db.models import Base
 
 
-class Person(Base):
+class DeviceInfo(Base):
     __tablename__ = "person"
     id = Column(Integer, primary_key=True, autoincrement=True)
     email = Column(String, nullable=False)

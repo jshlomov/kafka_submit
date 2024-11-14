@@ -8,7 +8,6 @@ class SuspiciousExplosiveContent(Base):
     __tablename__ = "suspicious_explosive_content"
     id = Column(Integer, primary_key=True, autoincrement=True)
     sentence = Column(String, nullable=False)
-
     person_id = Column(Integer, ForeignKey("person.id"))
 
     person = relationship("Person", back_populates="explosive_contents")
