@@ -10,8 +10,8 @@ def consume_message():
     def analyze_threat(message):
         sentences = message['sentences']
         for s in sentences:
-            sen = s.strip(".,?!").lower()
-            if "explosive" in sen:
+            sen = s.lower()
+            if "explos" in sen:
                 produce_explosive_message(message)
                 return
             if "hostage" in sen:
