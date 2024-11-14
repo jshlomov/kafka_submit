@@ -8,7 +8,7 @@ load_dotenv(verbose=True)
 
 def produce_explosive_message(message):
     produce(
-        topic_name=os.environ(['TOPIC_MESSAGES_EXPLOSIVE_NAME']),
+        topic_name=os.environ['TOPIC_MESSAGES_EXPLOSIVE_NAME'],
         message=message,
         key=message['email']
     )
