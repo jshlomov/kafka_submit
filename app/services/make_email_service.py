@@ -37,7 +37,7 @@ def convert_json_to_device_info(message, person_id):
 
 def convert_json_to_explosive_contents(message, person_id):
     return [
-        SuspiciousHostageContent(
+        SuspiciousExplosiveContent(
             sentence=sen,
             person_id=person_id
         )
@@ -45,13 +45,19 @@ def convert_json_to_explosive_contents(message, person_id):
     ]
 
 def convert_json_to_hostage_contents(message, person_id):
-    return [
+    hostage_content_list = [
         SuspiciousHostageContent(
             sentence=sen,
             person_id=person_id
         )
         for sen in message['sentences']
     ]
+    sorted_hostage_content = sorted(
+        hostage_content_list,
+        key=lambda x: 'hostage' in x.sentence.lower(),
+        reverse=True
+    )
+    return sorted_hostage_content
 
 @curry
 def insert_all_message(message, convert_sentences_func, insert_sentences_func):
