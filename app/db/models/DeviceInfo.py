@@ -10,6 +10,6 @@ class DeviceInfo(Base):
     browser = Column(String, nullable=False)
     os = Column(String, nullable=False)
     device_id = Column(String, nullable=False)
-    person_id = Column(Integer, ForeignKey("person.id"))
+    person_id = Column(Integer, ForeignKey("person_message.id"))
 
-    person = relationship("Person", back_populates="device_info")
+    person = relationship("PersonMessage", back_populates="device_info")

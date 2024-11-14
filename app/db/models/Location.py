@@ -11,6 +11,6 @@ class Location(Base):
     longitude = Column(Float, nullable=False)
     city = Column(String, nullable=False)
     country = Column(String, nullable=False)
-    person_id = Column(Integer, ForeignKey("person.id"))
+    person_id = Column(Integer, ForeignKey("person_message.id"))
 
-    person = relationship("Person", back_populates="location")
+    person = relationship("PersonMessage", back_populates="location")
